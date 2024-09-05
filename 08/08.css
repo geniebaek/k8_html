@@ -1,0 +1,24 @@
+.mainupdown {
+  margin-top: 0px;
+}
+
+
+h2 {
+  height: 80px;
+  background-color: #fff8f3;
+  color: rgb(143, 11, 11);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px dotted #4d4a40;
+}
+#txt1{
+  height: 40px;
+}
+#bt1 {
+ width: 70px;
+}
+
+

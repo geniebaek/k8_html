@@ -1,0 +1,25 @@
+body{
+  background-color:rgb(242, 229, 250) ;
+}
+hi{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height:80px;
+  padding: 50px ;
+  box-sizing:border-box;
+  font-size:small;
+  text-align: center;
+  background-color: rgb(191, 160, 201);
+  font-size:x-large;
+  font-weight:bold
+}
+
+div{
+  background-color: rgb(189, 241, 241);
+  margin:0px;
+  text-align: center;
+  height: 20px;
+
+}
