@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 
   //버튼클릭
- 
 
   for(let bt of bts) {
     console.log(bt);
