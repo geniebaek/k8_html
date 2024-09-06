@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const txt1 = document.querySelector('#txt1');
   const bt1 = document.querySelector('#bt1');
 
-
   //랜덤수
   let n;
   //flag변수
