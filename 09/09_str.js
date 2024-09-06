@@ -29,7 +29,6 @@ console.log('문자열 자르기 : ',s.slice(5,0));
 
 
 
-
 // s='1234';
 // console.log('문자열 : ',s);
 // console.log('숫자확인 : ',isNaN(s));

@@ -6,6 +6,7 @@ const bt2=document.querySelector('#bt2');
 const txt1=document.querySelector('#txt1');
 const txt2=document.querySelector('#txt2');
 
+
 //회문
 bt1.addEventListener('click',(e)=>{
   e.preventDefault();
