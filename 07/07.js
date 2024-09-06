@@ -10,7 +10,6 @@ const handleChange = (s1,s2,lb1,lb2,t1,t2)=>{
   t2.value="";
 }
 
-
 document.addEventListener('DOMContentLoaded',()=>{
 //요소가져오기
 const sel1 = document.querySelector('#sel1');
