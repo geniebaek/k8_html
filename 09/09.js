@@ -14,7 +14,6 @@ bt1.addEventListener('click',(e)=>{
   //반복문 이용
   // for(let i = s1.length-1 ; i >=0;i--){
   //   s2=s2+s1[i];
-
   // }
   //split이용
   s2=s1.split('').reverse().join('');
