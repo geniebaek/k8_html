@@ -1,0 +1,72 @@
+#boxofficeMain{
+  display: flex;
+
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  
+  height: 500px;
+}
+
+.sec, .divDt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+.sec{
+  width: 100%;
+  flex-direction: column;
+}
+.divDt{
+  width: 80%;
+  
+  height: 60px;
+  background-color: rgb(253, 243, 239);
+  flex-direction: row;
+  border: 1px dotted gray;
+}
+input[type=date]{
+  width: 40%;
+  height: 30px;
+}
+
+.sec>ul{
+  list-style: none;
+  width: 80%;
+  font-size: medium;
+}
+.mvli{
+  width: 100%;
+  height:40px;
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  margin: 0px 2px;
+}
+
+.mvli:hover{
+  background-color:rgb(243, 210, 191) ;
+  border-bottom: 1px solid black;
+}
+.rank{
+  width: 20px;
+  height: 20px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+ background-color:rgb(243, 210, 191) ;
+ color: white;
+
+ border-radius: 10%;
+ margin-right: 10px;
+}
+.rank:hover{
+  background-color: brown;
+}
+
+.dt{
+  margin-right: 80;
+}
