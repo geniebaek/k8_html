@@ -1,4 +1,53 @@
+//전역변수
+const testAPI = '82ca741a2844c5c180a208137bb92bd7';
+
+//상세정보 가져오기
+const getDetail = (movieCd,genreNm,companys) => {
+  const mvinfo = document.querySelector('#mvinfo')
+  let url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?`
+  url = `${url}&key=${testAPI}&movieCd=${movieCd}`;
+  mvinfo.innerHTML=movieCd;
+  
+  fetch(url)
+    .then(resp => resp.json())
+    .then(data => {
+      let movieInfo=data.movieInfoResult.movieInfo;
+      let genres= movieInfo.genres.map(item=> item.genreNm).join(',');
+      let companys=movieInfo.companys.map(item =>
+        `${item.companyNm}(${item.companyPartNm})`).join(',');
+      let actors=movieInfo.actors.slice(0.3).map(item=>item.peopleNm).join(',');
+      console.log(genres)
+      console.log(companys)
+
+      mvinfo.innerHTML=`
+          <div>${movieInfo.movieNm}(${movieInfo.openDt})</div>
+          <ul>
+          <li>장르 : ${genres}</li>
+          <li>출연진 : ${actors}</li>
+          </ul>`;
+
+      // console.log(mvinfoResult);
+      // let arr=`${item.genreNm[]}`
+      // let arr2=item.companys[];
+
+      // let tm = mvinfoResult.map(item => {
+      //   `<a href ="#" onClick="getDetail(${item.movieCd})">
+      //   <span class = 'genreNm'>${item.genreNm}<span>
+      //   <span class='companys>${item.companys}<span>`
+
+      //   tm = tm.join('')
+      //   mvinfo.innerHTML = tm;
+      // })
+      
+      
+      
+    })
+    .catch(err => console.error(err))
+}
+
+
 //OPEN API 데이터 가져오기
+
 const getData = (selDt, ul, gubun) => {
   console.log(gubun);
   const testAPI = '82ca741a2844c5c180a208137bb92bd7';
@@ -19,17 +68,19 @@ const getData = (selDt, ul, gubun) => {
 
 
       let tm = dailyBoxOfficeList.map(item =>
-        `<li class='mvli'>
+        `<a href ="#" onClick="getDetail(${item.movieCd})">
+        <li class='mvli'>
             <span class='rank'>${item.rank}</span>
             <sapn class='movieNm'>${item.movieNm}</sapn>
             <span class='openDt'>${item.openDt}</span>
             <span class='rankInten'>
-            ${item.rankInten > 0 ? 
-            '<span class="spRed">▲</span>' : item.rankInten < 0 ?
-                                              '<span class="spBlue">▼</span>' :'-'}
-             ${item.rankInten!=0?Math.abs(item.rankInten):''}
+            ${item.rankInten > 0 ?
+          '<span class="spRed">▲</span>' : item.rankInten < 0 ?
+            '<span class="spBlue">▼</span>' : '-'}
+             ${item.rankInten != 0 ? Math.abs(item.rankInten) : ''}
             </span>
-          </li>`)
+          </li>
+           </a>`)
       tm = tm.join('')
       ul.innerHTML = tm;
       //console.log(tm)
@@ -78,7 +129,7 @@ const getYesterday = () => {
 }
 
 //radio 값 가져오기
-const getGubun=()=>{
+const getGubun = () => {
   //radio 요소 가져오기
   // const r1 = document.querySelector('#r1');
   // const r2 = document.querySelector('#r2');
@@ -94,7 +145,7 @@ const getGubun=()=>{
 
   //radio 버튼의 클릭된 것만 가져오기
   const gubun = document.querySelector('input[type=radio]:checked')
-  console.log('gubun = ',gubun.value);
+  console.log('gubun = ', gubun.value);
   return gubun.value;
 }
 
@@ -107,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // const radios = document.getElementsByName('mvGubun');
   const radios = document.querySelectorAll('input[name=mvGubun]');
 
-  
+
   //어제 날짜 구하기
   let yesterday = getYesterday();
   console.log('yesterday : ', yesterday);
@@ -128,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
   dt.addEventListener('change', () => {
     getData(dt.value.replaceAll('-', ''), ul, getGubun());
 
-  
+
   });
   // r1.addEventListener('change', () => {
   //   getData(dt.value.replaceAll('-', ''), ul, getGubun);
@@ -139,9 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // r3.addEventListener('change', () => {
   //   getData(dt.value.replaceAll('-', ''), ul, getGubun);
   // });
-  for(let radio of radios){
-    radio.addEventListener('click',()=>{
-     if(radio.checked)getData(dt.value.replaceAll('-', ''), ul, radio.value);
+  for (let radio of radios) {
+    radio.addEventListener('click', () => {
+      if (radio.checked) getData(dt.value.replaceAll('-', ''), ul, radio.value);
     });
   }
 

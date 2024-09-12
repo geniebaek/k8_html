@@ -1,13 +1,28 @@
-#boxofficeMain {
+#boxofficeMain,#mvfooter {
   display: flex;
 
   flex-direction: column;
+  
+
+  
+}
+#boxofficeMain{
+  height: 500px;
   justify-content: start;
   align-items: center;
-
-  height: 500px;
 }
+#mvfooter{
+  height:80px;
+  background-color:rgb(209, 175, 153);
+  width: 60%;
+  margin-left: 20% ;
+  font-size: small;
+  padding: 20px;
 
+  justify-content: left;
+  justify-content: center;
+
+}
 .sec,
 .divDt {
   display: flex;
@@ -111,5 +126,8 @@ margin-left: 2px;
 }
 .spBlue{
   color:blue;
+}
+a {
+  text-decoration: none;
 }
 
