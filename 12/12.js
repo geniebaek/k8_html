@@ -4,7 +4,7 @@ const testAPI = '82ca741a2844c5c180a208137bb92bd7';
 //상세정보 가져오기
 const getDetail = (movieCd,genreNm,companys) => {
   const mvinfo = document.querySelector('#mvinfo')
-  let url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?`
+  let url = `https://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?`
   url = `${url}&key=${testAPI}&movieCd=${movieCd}`;
   mvinfo.innerHTML=movieCd;
   
