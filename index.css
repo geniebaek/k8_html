@@ -3,24 +3,29 @@ body{
 }
 hi{
   display:flex;
-  flex-direction: row;
-  justify-content: space-between;
+ 
+  justify-content: center;
   align-items: center;
   height:80px;
-  padding: 50px ;
-  box-sizing:border-box;
-  font-size:small;
+  
+  
+  font-size:x-large;
   text-align: center;
   background-color: rgb(191, 160, 201);
   font-size:x-large;
-  font-weight:bold
+  font-weight:bold;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 div{
-  background-color: rgb(189, 241, 241);
-  margin:0px;
+  list-style: none;
+  background-color: rgb(244, 232, 245);
+  margin:5px;
   text-align: center;
   height: 40px;
-  border:dotted cadetblue;
-
+  border:dotted rgb(251, 248, 252);
+  font-size: large;
+  margin-left: 20%;
+  margin-right: 20%;
 }
